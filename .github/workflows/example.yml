@@ -1,0 +1,15 @@
+# Example workflow for using review-beggar action
+name: PR Review Notification
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        uses: guilycst/review-beggar@main
+        with:
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
