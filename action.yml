@@ -1,0 +1,16 @@
+name: 'Review Beggar'
+description: 'Sends Slack messages to a channel when a Pull Request is ready to be reviewed'
+author: 'Guilherme de Castro'
+
+branding:
+  icon: 'bell'
+  color: 'blue'
+
+inputs:
+  slack_webhook_url:
+    description: 'Slack webhook URL for sending notifications'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
